@@ -97,3 +97,8 @@ eval(expression, globals=None, locals=None)
 - globals : 선택사항. 전역 변수로 사용될 사전
 - locals : 선택사항. 지역 변수로 사용될 사전
 ```
+```python
+str.isdigit()
+- 문자열의 각 문자가 숫자인지 여부를 판단
+- bool 형식으로 반환
+```
