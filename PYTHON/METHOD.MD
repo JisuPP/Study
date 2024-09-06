@@ -102,3 +102,12 @@ str.isdigit()
 - 문자열의 각 문자가 숫자인지 여부를 판단
 - bool 형식으로 반환
 ```
+```python
+str.strip([chars])
+- 문자열 양 쪽 끝에 있는 특정 문자를 제거
+```
+```python
+import math
+math.sqrt(x)
+- 제곱근을 계한하는 함수
+```
