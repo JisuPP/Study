@@ -111,3 +111,8 @@ import math
 math.sqrt(x)
 - 제곱근을 계한하는 함수
 ```
+```python
+import math
+math.gcd(a, b)
+- 두 수 의 최대 공약수 반환
+```
