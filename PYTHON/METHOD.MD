@@ -116,3 +116,24 @@ import math
 math.gcd(a, b)
 - 두 수 의 최대 공약수 반환
 ```
+```python
+str.rfind(substring, start, end)
+- 문자열에서 특정 부분 문자열(substring)이 마지막으로 등장하는 인덱스를 반환
+- 문자열의 오른쪽에서부터 탐색 시작
+- 첫 번째로 발견된 부분 문자열의 인덱스를 반환
+- substring : 찾고자 하는 부분 문자열
+- start : 선택사항, 탐색을 시작할 인덱스
+- end : 선택사항, 종료할 인덱스
+```
+```python
+list or str.index(value, start, end)
+- 특정 값이 처음으로 등장하는 위치 반환
+- value : 찾고자 하는 값
+- start : 선택사항, 검색을 시작할 인덱스
+- end : 선택사항, 검색을 종료할 인덱스
+```
+```python
+import math
+math.factorial(n)
+- 주어진 정수 n에 대한 팩도리얼 값을 계산해 반환하는 함수
+```
