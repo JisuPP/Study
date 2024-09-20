@@ -1329,3 +1329,401 @@ DROP TABLE table_name
 
 ### 리스트 이름 지정
 - `list('Chicago' = 1, 'New York' = 2, 'Los Angeles' = 3)`
+
+---
+
+# R의 날짜 및 시간
+
+## Tidyverse 및 윤활유 패키지 로드하기
+- `install.packages('tidyverse')`
+- `library(tidyverse)`
+- `library(lubridate)`
+
+## 날짜 및 시간으로 작업하기
+### 날짜 유형
+- 날짜 : `('2016-08-16')`
+- 하루 이내의 시간(AES) : `('20:11:59 UTC')`
+- 날짜-시간 : `('2018-03-31 18:15:45 UTC')`
+
+### 날짜 불러오기
+1. `today()`
+- `#> [1] '2021-01-20`
+  
+2. `now()`
+- `#> [1] '2021-01-20 16:25:05 UTC'`
+
+### 날짜 문자열에서 변환하기
+1. `ymd('2021-01-20')`
+- `#> [1] '2021-01-20'`
+
+2. `mdy('January 20th, 2021')`
+- `#> [1] '2021-01-20'`
+
+3. `dmy('20-Jan-2021')`
+- `#> [1] '2021-01-20'`
+
+4. `ymd(20210120)`
+- `#> [1] '2021-01-20'`
+
+### 날짜-시간 구성 요소 만들기
+1. `ymd_hms('2021-01-20 20:11:59')`
+- `#> [1] '2021-01-20 20:11:59 UTC'`
+
+2. `mdy_hm('01/20/2021 08:01')`
+- `#> [1] '2021-01-20 08:01:00 UTC'`
+
+### 날짜-시간 개체 간 전환
+1. `as_date(now())`
+- `#> [1] '2021-01-20'`
+
+# 데이터 프레임
+1. `data.frame()`
+- R에서 데이터 프레임을 수동으로 만들어야 하는 경우
+- `data.frame(x=c(1, 2, 3), y=c(1.5, 5.5, 7.5))`
+
+2. `file.create()`
+- 빈 파일 만들기
+- `file.create('new_text_file.txt')`
+
+3. `file.copy()`
+- `file.copy('new_text_file.txt', 'destination_folder')`
+
+4. `unlink()`
+- R 파일 삭제
+- `unlink('some_.file.csv')`
+
+5. `matrix()`
+- 행렬 만들기
+- `matrix(c(3:8), nrow=2)`
+- `matrix(c(3:8), ncol=2)`
+
+---
+
+# 논리 연산자
+- AND
+- OR
+- NOT
+
+## AND(&)
+1. TRUE & TRUE
+> TRUE
+
+2. TRUE & FALSE
+> FALSE
+
+3. FALSE & TRUE
+> FALSE
+
+4. FALSE & FALSE
+> FALSE
+
+## OR(|)
+1. TRUE | TRUE
+> TRUE
+
+2. TRUE | FALSE
+> TRUE
+
+3. FALSE | TRUE
+> TRUE
+
+4. FALSE | FALSE
+> FALSE
+
+## NOT(!)
+1. !TRUE
+> FALSE
+
+2. !FALSE
+> TRUE
+
+---
+
+# 조건문
+- if()
+- else()
+- else if()
+
+## if문
+```R
+if (condition) {
+  expr
+}
+```
+```R
+if (x>0) {
+  print('x is a positive number')
+}
+```
+
+## else문
+```R
+if (condition) {
+  expr1
+} else {
+  expr2
+}
+```
+```R
+if (x>0) {
+  print ('x is a positive number')
+} else {
+  print ('x is either a negative number or zero')
+}
+```
+
+## else if문
+```R
+if (condition1) {
+  expr1
+} else if (condition2) {
+  expr2
+} else {
+  expr3
+}
+```
+```R
+if (x<0) {
+  print('x is anegative number')
+} else if (x==0) {
+  print('x is zero')
+} else {
+  print('x is a positive number')
+}
+```
+
+---
+
+# 데이터 가져오기
+## 데이터() 함수
+1. `data()`
+2. `data(mtcars)` 
+3. `mtcars` + `Ctrl`
+
+## Readr 패키지
+### .csv
+- 쉼표로 구분된 값 파일
+- 데이터 리스트를 포함하는 일반 텍스트 파일
+
+### .tsv
+- 탭으로 구분된 값 파일
+- 데이터의 열이 탭으로 구분된 데이터 테이블을 저장
+
+### .fwf
+- 고정 너비 파일
+- 텍스트 데이터를 체계적으로 저장할 수 있는 특정 형식의 파일
+
+### .log
+- 컴퓨터에서 생성된 파일로 운영 체제 및 기타 소프트웨어 프로그램의 이벤트를 레코드
+
+## readr 함수
+- read_csv()
+- read_tsc()
+- read_delim()
+- read_fwf()
+- read_table()
+- read_log()
+
+---
+
+# 연산자
+- 산술
+- 관계형
+- 논리
+- 할당
+
+## 산술 연산자
+|연산자|설명|예시|
+|---|---|---|
+|+|더하기|x+y|
+|-|빼기|x-y|
+|*|곱셈|x*y|
+|/|나눗셈|x/y|
+|%%|나눗셈 후 나머지를 반환|y%%x|
+|%/%|나누기 후 정수 값 반환|y%/%x|
+^|지수|y^x|
+
+## 관계 연산자
+|연산자|설명|예시|
+|---|---|---|
+|<|보다 작음|x<y|
+|>|보다 큼|x>y|
+|<=|다음보다 작거나 같음|x<=2|
+|>=|다음보다 크거나 같음|y>=10|
+|==|다음과 같음|y==5|
+|!=|같지 않음|x!=2|
+
+## 논리 연산자
+|연산자|설명|
+|---|---|
+|&|요소별 논리 AND|
+|&&|논리 AND|
+|\||요소별 논리 OR|
+|\|\||논리 OR|
+|!|논리적 NOT|
+
+## 대입 연산자
+|연산자|설명|예시|
+|---|---|---|
+|<-|왼쪽 대입|x<-2|
+|<<-|왼쪽으로 할당|x<<-7|
+|=|왼족으로 대입|x=9|
+|->|오른쪽으로 대입|11->x|
+|->>|오른족으로 할당|21->>x|
+
+---
+
+# R 시각화 시 발생하는 문제
+## 대소문자 구분
+- R은 대소문자를 구분한다.
+- `Glimpse(penguins)`
+- `Error in Glimpse(penguins) : could not find function "Glimpse"`
+> `glimpse(penguins)`
+
+## 괄호와 따옴표의 균형 맞추기
+- `ggplot(data = penguins) + `
+  `geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g`
+- `unmatched opening bracket '('`
+> `ggplot(data = penguins) + `
+  `geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))`
+
+---
+
+# Ggplot2의 미학
+- R 작업 공간에서 바로 다양한 유형의 데이터 시각화를 만들 수 있는 R 패키지
+
+## 미적 속성
+### 색상
+- 플롯에 있는 모든 포인트의 색상 또는 각 데이터 그룹의 색상을 변경 가능
+
+### 크기
+- 데이터 그룹별로 플롯에 있는 포인트의 크기를 변경 가능
+
+### 모양
+- 데이터 그룹별로 플롯에 있는 포인트의 모양을 변경 가능
+
+### 예시
+```R
+ggplot(data, aes(x=distance, y= dep_delay, color=carrier, size=air_time, shape = carrier)) 
+      geom_point()
+```
+
+---
+
+# 스무딩
+- 플롯된 데이터 포인트에서 추세를 쉽게 알아차릴 수 없는 경우에도 데이터 추세를 감지 가능
+- 플롯에 또 다른 레이어로 스무딩 선을 추가하여 일반 관찰자가 데이터를 이해할 수 있게 도움
+
+## 예시
+```R
+ggplot(data, aes(x=distance, 
+y= dep_delay)) +
+    geom_point() +
+    geom_smooth()
+```
+
+## 유형
+### 황토 스무딩
+- 황토 평활화 프로세스는 1000점 미만의 플롯을 평활화하는 데 가장 적합합니다
+
+```R
+ggplot(data, aes(x=, y=))+ 
+  geom_point() +       
+  geom_smooth(method="loess")
+```
+
+### 감 스무딩
+- 감 스무딩 또는 일반화된 덧셈 모델 
+평활화는 많은 수의 점이 있는 플롯을 평활화하는 데 유용합니다.
+
+```R
+ggplot(data, aes(x=, y=)) + 
+  geom_point() +        
+  geom_smooth(method="gam", 
+formula = y ~s(x))
+```
+
+---
+
+# 필터링 및 플롯
+- 데이터를 플로팅하기 전에 데이터를 필터링하면 데이터의 특정 하위 집합에 집중하여 보다 타겟팅된 인사이트 도출 가능
+
+```R
+data %>%
+    filter(variable1 == "DS") %>%  
+    ggplot(aes(x = weight, y = variable2, colour = variable1)) +  
+    geom_point(alpha = 0.3,  position = position_jitter()) + stat_smooth(method = "lm")
+```
+
+---
+
+# Ggsave() 없이 이미지 저장하기
+- R에서 플롯을 만들 때는 특정 그래픽 장치로 '전송'해야 한다.
+- Ggsave()를 사용하지 않고 이미지를 저장하려면 png() 또는 pdf()와 같은 R 그래픽 장치를 열면 .png 또는 .pdf 파일로 플롯 저장이 가능
+- 플롯 인쇄 시 dev.off()를 사용하여 장치를 닫도록 선택 가능
+- png() 사용 예시
+```R
+png(file = "exampleplot.png", bg = "transparent")
+plot(1:10)
+rect(1, 5, 3, 7, col = "white")
+dev.off()
+```
+- pdf() 사용 예시
+```R
+pdf(file = "/Users/username/Desktop/example.pdf",    
+       width = 4,     
+       height = 4) 
+plot(x = 1:10,     
+        y = 1:10)
+abline(v = 0)
+text(x = 0, y = 1, labels = "Random text")
+dev.off()
+```
+
+---
+
+# R Markdown(R) 출력 형식
+## R Markdown(R) 문서의 출력 설정하기
+- 문서 생성
+```R
+---
+
+title: "Demo"
+
+output: html_document
+
+---
+---
+
+title: "Demo"
+
+output: pdf_document
+
+---
+```
+- RStudio 소스 편진기의 니트 버튼은 출력 필드에 나열되 첫 번째 형식으로 파일을 렌더링
+
+## 사용 가능한 문서 출력
+- **pdf_document**
+  - LaTeX(오픈 소스 문서 레이아웃 시스템)로 PDF 파일을 만든다.
+  - LaTeX가 아직 없는 경우 RStudio에서 자동으로 설치하라는 메시지를 표시
+- **word_document**
+  - Microsoft Word 문서(.docx)를 만든다.
+- **odt_document**
+  - OpenDocument 텍스트 문서(.odt)를 만든다
+- **rtf_document**
+  - 서식 있는 텍스트 형식 문서(.rtf)를 만든다.
+- **md_document**
+  - 마크다운 문서를 생성
+- **github_document**
+  - GitHub에서 공유하도록 설계된 마크다운 문서의 사용자 지정 버전인 GitHub 문서를 만든다.
+- **beamer_presentation**
+  - 빔이 포함된 PDF 프레젠테이션용
+- **ioslides_presentation**
+  - ioslides가 포함된 HTML 프레젠테이션용
+- **slidy_presentation**
+  - 슬라이디가 포함된 HTML 프레젠테이션용
+- **powerpoint_presentation**
+  - 파워포인트 프레젠테이션용
+- **revealjs : : revealjs_presentation**
+  - reveal.js를 사용한 HTML 프레젠테이션용
