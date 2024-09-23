@@ -137,3 +137,6 @@ import math
 math.factorial(n)
 - 주어진 정수 n에 대한 팩도리얼 값을 계산해 반환하는 함수
 ```
+```python
+
+```
