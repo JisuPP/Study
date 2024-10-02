@@ -4,6 +4,8 @@ WHERE SUBSTRING(APNT_YMD, 1, 7) = '2022-05'
 GROUP BY MCDP_CD
 ORDER BY COUNT(*) ASC, MCDP_CD ASC;
 
+-------------------------------------
+
 SELECT
     MCDP_CD AS '진료과 코드',
     COUNT(*) AS '5월예약건수'
