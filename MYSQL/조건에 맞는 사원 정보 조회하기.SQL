@@ -11,3 +11,5 @@ WHERE YEAR = 2022
 GROUP BY G.EMP_NO
 ORDER BY SCORE DESC
 LIMIT 1;
+
+----------------------------
