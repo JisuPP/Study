@@ -1,17 +1,4 @@
-```python
-str.swapcase()
-- 메서드를 사용하여 대문자는 소문자로, 소문자는 대문자로 변환
-```
-```python
-str.split()
-- 문자열을 공백 기준으로 분리하여 리스트로 반환합니다.
-```
-```python
-enumerate(iterable, start=0)
-- 반복 가능한 객체를 인덱스화 함께 순회하고 반환합니다.
-- iterable: 인덱스를 부여하고 싶은 반복 가능한 객체.
-- start: 인덱스의 시작 값. 기본값은 0 입니다.
-```
+
 ```python
 zip(iterables, iterables)
 - 여러 개의 iterable 객체들을 동시에 순회할 수 있게 해준다.
