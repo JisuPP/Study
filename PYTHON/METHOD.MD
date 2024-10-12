@@ -1,16 +1,5 @@
 
-```python
-zip(iterables, iterables)
-- 여러 개의 iterable 객체들을 동시에 순회할 수 있게 해준다.
-- 각 iterable의 요소들을 묶어 튜플 형태로 반환한다.
-```
-```python
-str.startswith(prefix, start[,end])
-- 문자열이 특정 접두사로 시작하는지를 확인하는 데 사용
-- prefix : 확인하고자 하는 접두사 문자열
-- start(선택적) : 검사할 시작 위치, 기본값 0
-- end(선택적) : 검사할 끝 위치, 기본갑 문자열 끝
-```
+
 ```python
 str.endswith(suffix[, start[, end]])
 - 문자열이 특적 문자열로 끝나는지 여부를 확인
