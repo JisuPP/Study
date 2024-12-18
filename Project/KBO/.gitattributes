@@ -1,0 +1,9 @@
+# 텍스트 파일들은 LF 사용
+* text eol=lf
+
+# Jupyter Notebook은 LF 사용 강제
+*.ipynb text eol=lf
+
+# 바이너리 파일 처리
+*.png binary
+*.jpg binary
